@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "599827038730",
+    "project_id": "smart-infusion-1e447",
+    "storage_bucket": "smart-infusion-1e447.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:599827038730:android:f5c30d458cdc9d2f34d5f3",
+        "android_client_info": {
+          "package_name": "com.example.smartinfusion"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "599827038730-ksgqc0tri32bvmqnoga8mko0mutmsf16.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAI0XnFJsR8EzVHWpCHBiBMvGvvplRHO80"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "599827038730-ksgqc0tri32bvmqnoga8mko0mutmsf16.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

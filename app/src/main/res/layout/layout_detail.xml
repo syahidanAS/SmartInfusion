@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="400dp"
+    android:layout_height="match_parent"
+    android:layout_marginHorizontal="20dp"
+    android:layout_gravity="center"
+    android:background="@color/gray">
+
+
+    <LinearLayout
+        android:id="@+id/content_2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@color/white"
+        android:layout_margin="5dp">
+
+<!--        Action Bar-->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="?actionBarSize"
+            android:background="@color/colorAccent">
+            <TextView
+                android:id="@+id/title_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/loading"
+                android:textStyle="bold"
+                android:layout_centerInParent="true"
+                android:textSize="25sp"
+                android:textColor="#ffffff"/>
+
+            <ImageButton
+                android:id="@+id/btn_close"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_close"
+                android:layout_alignParentEnd="true"
+                android:background="@color/colorAccent"
+                android:padding="20dp"/>
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+           <RelativeLayout
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:layout_margin="10dp">
+               <Switch
+                   android:id="@+id/sw_status"
+                   android:visibility="gone"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:layout_alignParentEnd="true"/>
+           </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="5dp"
+                android:orientation="vertical">
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Nilai Kalibrasi Infus"
+                    android:layout_marginTop="5dp"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"/>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp">
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/ic_baseline_info_24"
+                        android:layout_gravity="center"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:textSize="15sp"
+                        android:text="Masukan nilai volume infus pada kemasan"/>
+
+                </LinearLayout>
+                <EditText
+                    android:id="@+id/calibration_val"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Volume infus"
+                    android:textSize="15sp"
+                    android:padding="10dp"
+                    android:inputType="number"
+                    android:background="@drawable/rounded_edittext"/>
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Volume Infus"
+                    android:layout_marginTop="20dp"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"/>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp">
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/ic_baseline_info_24"
+                        android:layout_gravity="center"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:textSize="15sp"
+                        android:text="Masukan batas maksimal sisa volume infus"/>
+
+                </LinearLayout>
+                <EditText
+                    android:id="@+id/infusion_alarm"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Alarm infus"
+                    android:textSize="15sp"
+                    android:padding="10dp"
+                    android:inputType="number"
+                    android:background="@drawable/rounded_edittext"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Volume urine bag"
+                    android:layout_marginTop="20dp"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"/>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp">
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/ic_baseline_info_24"
+                        android:layout_gravity="center"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:textSize="15sp"
+                        android:text="Masukan batas maksimal volume urine bag"/>
+
+                </LinearLayout>
+                <EditText
+                    android:id="@+id/urine_alarm"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Alarm urine bag"
+                    android:textSize="15sp"
+                    android:padding="10dp"
+                    android:inputType="number"
+                    android:background="@drawable/rounded_edittext"/>
+                <Button
+                    android:id="@+id/btn_update"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Perbaharui"
+                    android:textSize="15sp"
+                    android:layout_margin="5dp"
+                    android:layout_gravity="end"
+                    android:textStyle="bold"
+                    android:backgroundTint="@color/colorAccent"/>
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+
+
+
+
+<!--        Content kedua-->
+
+    </LinearLayout>
+
+</ScrollView>

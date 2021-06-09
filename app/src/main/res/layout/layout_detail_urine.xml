@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="400dp"
+    android:layout_height="match_parent"
+    android:layout_marginHorizontal="20dp"
+    android:layout_gravity="center"
+    android:background="@color/gray">
+
+
+    <LinearLayout
+        android:id="@+id/content_2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@color/white"
+        android:layout_margin="5dp">
+
+        <!--        Action Bar-->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="?actionBarSize"
+            android:background="@color/dark_blue">
+            <TextView
+                android:id="@+id/title_urine_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/loading"
+                android:textStyle="bold"
+                android:layout_centerInParent="true"
+                android:textSize="25sp"
+                android:textColor="#ffffff"/>
+
+            <ImageButton
+                android:id="@+id/btn_close"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_close"
+                android:layout_alignParentEnd="true"
+                android:background="@color/dark_blue"
+                android:padding="20dp"/>
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp">
+                <Switch
+                    android:id="@+id/sw_status"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"/>
+            </RelativeLayout>
+
+
+
+        </LinearLayout>
+
+
+
+
+
+        <!--        Content kedua-->
+
+    </LinearLayout>
+
+</ScrollView>
