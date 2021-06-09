@@ -12,6 +12,7 @@ import android.widget.SearchView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -32,7 +33,7 @@ public class UrineActivity extends AppCompatActivity {
     ProgressBar pbLoading;
     SearchView svUrine;
     LinearLayout dataKosong;
-    List<DataUrine> list = new ArrayList<>();
+    ArrayList<DataUrine>list;
 
     private static final String TAG = "Home";
 
@@ -55,33 +56,31 @@ public class UrineActivity extends AppCompatActivity {
 //        bacaData();
         // Read from the database
 
-
-        if(myRef != null){
+//        if (myRef !=null){
             pbLoading.setVisibility(View.VISIBLE);
             myRef.addValueEventListener(new ValueEventListener() {
                 @Override
-                public void onDataChange(DataSnapshot dataSnapshot) {
-                    list.clear();
-                    pbLoading.setVisibility(View.VISIBLE);
-                    for(DataSnapshot snapshot : dataSnapshot.getChildren()){
-                        DataUrine value = snapshot.getValue(DataUrine.class);
-                        list.add(value);
+                public void onDataChange(@NonNull DataSnapshot snapshot) {
+                    if (snapshot.exists()){
+                        list = new ArrayList<>();
+                        for(DataSnapshot ds : snapshot.getChildren()){
+                            list.add(ds.getValue(DataUrine.class));
+                        }
+                        AdapterUrine adapterUrine = new AdapterUrine(list);
+                        rvDataUrine.setAdapter(adapterUrine);
                     }
-                    rvDataUrine.setAdapter(new AdapterUrine(UrineActivity.this, list));
-                    pbLoading.setVisibility(View.GONE);
                 }
 
                 @Override
-                public void onCancelled(DatabaseError error) {
-                    // Failed to read value
-                    Log.w(TAG, "Failed to read value.", error.toException());
+                public void onCancelled(@NonNull DatabaseError error) {
+                    Toast.makeText(UrineActivity.this, error.getMessage(), Toast.LENGTH_SHORT).show();
                 }
             });
-        }else{
-            rvDataUrine.setVisibility(View.GONE);
-            dataKosong.setVisibility(View.VISIBLE);
-
-        }
+            pbLoading.setVisibility(View.GONE);
+//        }else{
+//            rvDataUrine.setVisibility(View.GONE);
+//            dataKosong.setVisibility(View.VISIBLE);
+//        }
 
         if (svUrine != null){
             svUrine.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
@@ -97,21 +96,19 @@ public class UrineActivity extends AppCompatActivity {
                 }
             });
         }
-
-
-
     }
 
     private void search(String str) {
         ArrayList<DataUrine> myList = new ArrayList<>();
         for(DataUrine object : list){
-            if(object.getTanggal().toLowerCase().contains(str.toLowerCase())){
+            if (object.getTanggal().toLowerCase().contains(str.toLowerCase())){
                 myList.add(object);
             }
         }
         AdapterUrine adapterUrine = new AdapterUrine(myList);
         rvDataUrine.setAdapter(adapterUrine);
     }
+
 
 }
 

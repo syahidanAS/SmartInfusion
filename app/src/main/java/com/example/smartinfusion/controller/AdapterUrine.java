@@ -16,32 +16,23 @@ import com.google.firebase.database.annotations.NotNull;
 import java.util.ArrayList;
 import java.util.List;
 
-public class AdapterUrine extends RecyclerView.Adapter<AdapterUrine.ViewHolder> {
-    Context context;
-    List<DataUrine> list;
-
-    public AdapterUrine(Context context, List<DataUrine> list) {
-        this.context = context;
+public class AdapterUrine extends RecyclerView.Adapter<AdapterUrine.MyViewHolder>{
+    ArrayList<DataUrine>list;
+    public AdapterUrine(ArrayList<DataUrine>list){
         this.list = list;
     }
-
-    public AdapterUrine(ArrayList<DataUrine> myList) {
-    }
-
     @NonNull
     @Override
-    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(context).inflate(R.layout.list_data_urine,parent, false);
-        return new ViewHolder(view);
+    public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.list_data_urine, parent,false);
+        return new MyViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        String volumeAsString = Integer.toString(list.get(position).getVolume());
-        holder.volumeUrineDetail.setText(volumeAsString+" ml");
-        holder.tvJam.setText(list.get(position).getJam());
+    public void onBindViewHolder(@NonNull AdapterUrine.MyViewHolder holder, int position) {
+        holder.tvVolumeUrine.setText(String.valueOf(list.get(position).getVolume())+" ml");
         holder.tvTanggal.setText(list.get(position).getTanggal());
-
+        holder.tvJam.setText(list.get(position).getJam());
     }
 
     @Override
@@ -49,17 +40,14 @@ public class AdapterUrine extends RecyclerView.Adapter<AdapterUrine.ViewHolder> 
         return list.size();
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder {
-        TextView volumeUrineDetail, tvTanggal, tvJam;
-        ImageButton ibEdit, ibDelete;
-
-        public ViewHolder(@NonNull View itemView) {
+    class MyViewHolder extends RecyclerView.ViewHolder{
+        TextView tvTanggal, tvJam, tvVolumeUrine;
+        public MyViewHolder(@NonNull View itemView) {
             super(itemView);
-
-            volumeUrineDetail = itemView.findViewById(R.id.volume_urine_detail);
             tvTanggal = itemView.findViewById(R.id.tv_tanggal);
             tvJam = itemView.findViewById(R.id.tv_jam);
-
+            tvVolumeUrine = itemView.findViewById(R.id.volume_urine_detail);
         }
     }
+
 }
