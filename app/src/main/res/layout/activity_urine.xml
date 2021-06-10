@@ -10,24 +10,42 @@
 
 
     <LinearLayout
-        android:id="@+id/title"
+        android:id="@+id/header"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:layout_height="55dp"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:background="@color/colorAccent">
         <TextView
+            android:id="@+id/judul_bed"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Log Urine Bag Pasien"
+            android:text="memuat..."
+            android:layout_marginRight="27dp"
             android:textSize="20sp"
+            android:layout_marginLeft="10dp"
+
+            android:textColor="@color/white"
+            android:textStyle="bold"/>
+        <SearchView
+            android:id="@+id/sv_urine"
+            android:layout_marginRight="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
             android:layout_marginLeft="5dp"
-            android:layout_marginTop="10dp"
-            android:textColor="@color/black" />
-       <SearchView
-           android:id="@+id/sv_urine"
-           android:layout_width="match_parent"
-           android:layout_height="wrap_content"/>
+            android:background="@color/white" />
     </LinearLayout>
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Log urine bag pasien"
+        android:textSize="17sp"
+        android:textColor="@color/black"
+        android:layout_marginTop="3dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="2dp"
+        android:padding="5dp"/>
 
 
     <androidx.recyclerview.widget.RecyclerView

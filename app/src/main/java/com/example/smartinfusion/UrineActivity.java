@@ -1,9 +1,11 @@
 package com.example.smartinfusion;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.LinearLayout;
@@ -33,6 +35,7 @@ public class UrineActivity extends AppCompatActivity {
     ProgressBar pbLoading;
     SearchView svUrine;
     LinearLayout dataKosong;
+    TextView tvBedName;
     ArrayList<DataUrine>list;
 
     private static final String TAG = "Home";
@@ -42,13 +45,16 @@ public class UrineActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_urine);
         String bedKey = getIntent().getStringExtra("keyname");
+        String bedName = getIntent().getStringExtra("bedname");
 
         rvDataUrine = findViewById(R.id.rv_data_urine);
         dataKosong = findViewById(R.id.data_kosong);
         svUrine = findViewById(R.id.sv_urine);
         rvDataUrine.setLayoutManager(new LinearLayoutManager(this));
-
         pbLoading = findViewById(R.id.pb_loading);
+        tvBedName = findViewById(R.id.judul_bed);
+
+        tvBedName.setText(bedName);
 
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference myRef = database.getReference(bedKey);
@@ -58,6 +64,7 @@ public class UrineActivity extends AppCompatActivity {
 
 //        if (myRef !=null){
             pbLoading.setVisibility(View.VISIBLE);
+            dataKosong.setVisibility(View.VISIBLE);
             myRef.addValueEventListener(new ValueEventListener() {
                 @Override
                 public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -76,6 +83,7 @@ public class UrineActivity extends AppCompatActivity {
                     Toast.makeText(UrineActivity.this, error.getMessage(), Toast.LENGTH_SHORT).show();
                 }
             });
+            dataKosong.setVisibility(View.GONE);
             pbLoading.setVisibility(View.GONE);
 //        }else{
 //            rvDataUrine.setVisibility(View.GONE);

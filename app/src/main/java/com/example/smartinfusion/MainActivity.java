@@ -2,6 +2,7 @@ package com.example.smartinfusion;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.NotificationCompat;
 import androidx.core.app.NotificationManagerCompat;
@@ -55,7 +56,6 @@ import java.util.Objects;
 import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
-
     FloatingActionButton fab_tambah;
     RecyclerView rv_data;
     ProgressBar pbHome;
@@ -99,6 +99,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         pbHome = findViewById(R.id.pb_home);
+
 
         if (Build.VERSION.SDK_INT>=Build.VERSION_CODES.O){
             NotificationChannel channel = new NotificationChannel("My Notification",
@@ -791,54 +792,67 @@ public class MainActivity extends AppCompatActivity {
         if (kodenya.equals(kode_ruangan[0])){
             Intent intent = new Intent(MainActivity.this, UrineActivity.class);
             intent.putExtra("keyname", "urinebag_1_1");
+            intent.putExtra("bedname", "Bed 1");
             startActivity(intent);
         }else if(kodenya.equals(kode_ruangan[1])){
             Intent intent = new Intent(MainActivity.this, UrineActivity.class);
             intent.putExtra("keyname", "urinebag_1_2");
+            intent.putExtra("bedname", "Bed 1");
             startActivity(intent);
         }else if(kodenya.equals(kode_ruangan[2])){
             Intent intent = new Intent(MainActivity.this, UrineActivity.class);
             intent.putExtra("keyname", "urinebag_1_3");
+            intent.putExtra("bedname", "Bed 1");
             startActivity(intent);
         }else if(kodenya.equals(kode_ruangan[3])){
             Intent intent = new Intent(MainActivity.this, UrineActivity.class);
             intent.putExtra("keyname", "urinebag_1_4");
+            intent.putExtra("bedname", "Bed 1");
             startActivity(intent);
         }else if(kodenya.equals(kode_ruangan[4])){
             Intent intent = new Intent(MainActivity.this, UrineActivity.class);
             intent.putExtra("keyname", "urinebag_1_5");
+            intent.putExtra("bedname", "Bed 1");
             startActivity(intent);
         }else if(kodenya.equals(kode_ruangan[5])){
             Intent intent = new Intent(MainActivity.this, UrineActivity.class);
             intent.putExtra("keyname", "urinebag_1_6");
+            intent.putExtra("bedname", "Bed 1");
             startActivity(intent);
         }else if(kodenya.equals(kode_ruangan[6])){
             Intent intent = new Intent(MainActivity.this, UrineActivity.class);
             intent.putExtra("keyname", "urinebag_1_7");
+            intent.putExtra("bedname", "Bed 1");
             startActivity(intent);
         }else if(kodenya.equals(kode_ruangan[7])){
             Intent intent = new Intent(MainActivity.this, UrineActivity.class);
             intent.putExtra("keyname", "urinebag_1_8");
+            intent.putExtra("bedname", "Bed 1");
             startActivity(intent);
         }else if(kodenya.equals(kode_ruangan[8])){
             Intent intent = new Intent(MainActivity.this, UrineActivity.class);
             intent.putExtra("keyname", "urinebag_1_9");
+            intent.putExtra("bedname", "Bed 1");
             startActivity(intent);
         }else if(kodenya.equals(kode_ruangan[9])){
             Intent intent = new Intent(MainActivity.this, UrineActivity.class);
             intent.putExtra("keyname", "urinebag_1_10");
+            intent.putExtra("bedname", "Bed 1");
             startActivity(intent);
         }else if(kodenya.equals(kode_ruangan[10])){
             Intent intent = new Intent(MainActivity.this, UrineActivity.class);
             intent.putExtra("keyname", "urinebag_1_11");
+            intent.putExtra("bedname", "Bed 1");
             startActivity(intent);
         }else if(kodenya.equals(kode_ruangan[11])){
             Intent intent = new Intent(MainActivity.this, UrineActivity.class);
             intent.putExtra("keyname", "urinebag_1_12");
+            intent.putExtra("bedname", "Bed 1");
             startActivity(intent);
         }else if(kodenya.equals(kode_ruangan[12])){
             Intent intent = new Intent(MainActivity.this, UrineActivity.class);
             intent.putExtra("keyname", "urinebag_1_13");
+            intent.putExtra("bedname", "Bed 1");
             startActivity(intent);
         }
 
@@ -849,54 +863,67 @@ public class MainActivity extends AppCompatActivity {
         if (kodenya.equals(kode_ruangan[0])){
             Intent intent = new Intent(MainActivity.this, UrineActivity.class);
             intent.putExtra("keyname", "urinebag_2_1");
+            intent.putExtra("bedname", "Bed 2");
             startActivity(intent);
         }else if(kodenya.equals(kode_ruangan[1])){
             Intent intent = new Intent(MainActivity.this, UrineActivity.class);
             intent.putExtra("keyname", "urinebag_2_2");
+            intent.putExtra("bedname", "Bed 2");
             startActivity(intent);
         }else if(kodenya.equals(kode_ruangan[2])){
             Intent intent = new Intent(MainActivity.this, UrineActivity.class);
             intent.putExtra("keyname", "urinebag_2_3");
+            intent.putExtra("bedname", "Bed 2");
             startActivity(intent);
         }else if(kodenya.equals(kode_ruangan[3])){
             Intent intent = new Intent(MainActivity.this, UrineActivity.class);
             intent.putExtra("keyname", "urinebag_2_4");
+            intent.putExtra("bedname", "Bed 2");
             startActivity(intent);
         }else if(kodenya.equals(kode_ruangan[4])){
             Intent intent = new Intent(MainActivity.this, UrineActivity.class);
             intent.putExtra("keyname", "urinebag_2_5");
+            intent.putExtra("bedname", "Bed 2");
             startActivity(intent);
         }else if(kodenya.equals(kode_ruangan[5])){
             Intent intent = new Intent(MainActivity.this, UrineActivity.class);
             intent.putExtra("keyname", "urinebag_2_6");
+            intent.putExtra("bedname", "Bed 2");
             startActivity(intent);
         }else if(kodenya.equals(kode_ruangan[6])){
             Intent intent = new Intent(MainActivity.this, UrineActivity.class);
             intent.putExtra("keyname", "urinebag_2_7");
+            intent.putExtra("bedname", "Bed 2");
             startActivity(intent);
         }else if(kodenya.equals(kode_ruangan[7])){
             Intent intent = new Intent(MainActivity.this, UrineActivity.class);
             intent.putExtra("keyname", "urinebag_2_8");
+            intent.putExtra("bedname", "Bed 2");
             startActivity(intent);
         }else if(kodenya.equals(kode_ruangan[8])){
             Intent intent = new Intent(MainActivity.this, UrineActivity.class);
             intent.putExtra("keyname", "urinebag_2_9");
+            intent.putExtra("bedname", "Bed 2");
             startActivity(intent);
         }else if(kodenya.equals(kode_ruangan[9])){
             Intent intent = new Intent(MainActivity.this, UrineActivity.class);
             intent.putExtra("keyname", "urinebag_2_10");
+            intent.putExtra("bedname", "Bed 2");
             startActivity(intent);
         }else if(kodenya.equals(kode_ruangan[10])){
             Intent intent = new Intent(MainActivity.this, UrineActivity.class);
             intent.putExtra("keyname", "urinebag_2_11");
+            intent.putExtra("bedname", "Bed 2");
             startActivity(intent);
         }else if(kodenya.equals(kode_ruangan[11])){
             Intent intent = new Intent(MainActivity.this, UrineActivity.class);
             intent.putExtra("keyname", "urinebag_2_12");
+            intent.putExtra("bedname", "Bed 2");
             startActivity(intent);
         }else if(kodenya.equals(kode_ruangan[12])){
             Intent intent = new Intent(MainActivity.this, UrineActivity.class);
             intent.putExtra("keyname", "urinebag_2_13");
+            intent.putExtra("bedname", "Bed 2");
             startActivity(intent);
         }
 

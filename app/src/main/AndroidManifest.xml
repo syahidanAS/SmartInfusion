@@ -16,15 +16,20 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.SmartInfusion">
-        <activity android:name=".UrineActivity"
-            ></activity>
+        <activity android:name=".auth_activity"
+            android:theme="@style/AppTheme.NoActionBar" ></activity>
+        <activity
+            android:name=".UrineActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".RegisterActivity"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".AdminActivity" />
-        <activity android:name=".MainActivity" />
         <activity
-            android:name=".auth_activity"
+            android:name=".MainActivity"
+            android:icon="@drawable/logo" />
+        <activity
+            android:name=".SplashScreenActivity"
             android:theme="@style/AppTheme.NoActionBar"
             android:windowSoftInputMode="adjustResize">
             <intent-filter>
